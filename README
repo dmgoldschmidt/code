@@ -15,8 +15,9 @@ int main(int argc, char** argv){
   cout << "b: "<<b<<endl;
 }
 Notes:
-1. The declaration in fill_it allocates an array of n ints on the heap.
+1. The declaration in fill_it allocates an array of n ints on the heap and puts a pointer on the stack.
 2. The return statement in fill_it really just returns a pointer to a. The data is not copied.
 3. The declaration in main does not allocate anything on the heap.  A pointer is created on the stack.
-4. The assignment statement in main just resets the pointer.  When b goes out of scope, the heap
-   memory is released.   
+4. The assignment statement in main just resets the pointer.  When b goes out of scope and no other 
+   pointers to the array exist, the heap memory is released. 
+  
